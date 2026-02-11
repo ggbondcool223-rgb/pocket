@@ -6,6 +6,9 @@ import 'package:pocket_ledger/pages/pl_add_record/pl_add_record_binding.dart';
 import 'package:pocket_ledger/pages/pl_add_record/pl_add_record_view.dart';
 import 'package:pocket_ledger/pages/pl_budget_setting/pl_budget_setting_binding.dart';
 import 'package:pocket_ledger/pages/pl_budget_setting/pl_budget_setting_view.dart';
+import 'package:pocket_ledger/pages/pl_mind/pl_mind_binding.dart';
+import 'package:pocket_ledger/pages/pl_mind/pl_mind_view.dart';
+import 'package:pocket_ledger/pages/pl_settings/pl_settings_leger.dart';
 import 'package:pocket_ledger/pages/pl_template_manage/pl_template_manage_binding.dart';
 import 'package:pocket_ledger/pages/pl_template_manage/pl_template_manage_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
           title: 'Pocket Ledger',
           debugShowCheckedModeBanner: false,
           getPages: Pocket,
-          initialRoute: '/main',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: PlColors.primary,
@@ -99,6 +102,11 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> Pocket = [
   GetPage(
+    name: '/',
+    page: () => const PlMindView(),
+    binding: PlMindBinding(),
+  ),
+  GetPage(
     name: '/main',
     page: () => const PlMainPage(),
     binding: PlMainBinding(),
@@ -107,6 +115,10 @@ List<GetPage<dynamic>> Pocket = [
     name: '/add_record',
     page: () => const PlAddRecordPage(),
     binding: PlAddRecordBinding(),
+  ),
+  GetPage(
+    name: '/setting_leger',
+    page: () => const PlSettingsLeger(),
   ),
   GetPage(
     name: '/budget_setting',

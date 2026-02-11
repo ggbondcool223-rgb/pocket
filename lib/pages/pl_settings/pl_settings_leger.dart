@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../pl_mind/pl_mind_logic.dart';
 
 class PlSettingsLeger extends GetView<PlMindLogic> {
+  const PlSettingsLeger({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class PlSettingsLeger extends GetView<PlMindLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.hvcyt.value)),
+              url: WebUri.uri(Uri.parse(controller.xwlkgvht.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

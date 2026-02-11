@@ -11,8 +11,8 @@ class PlMindView extends GetView<PlMindLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.ekynsa.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.wxjf.value
+              ? const CircularProgressIndicator(color: Colors.grey)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class PlMindView extends GetView<PlMindLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.lhdvtu();
+              controller.zcoj();
             },
             icon: const Icon(
               Icons.restart_alt,
